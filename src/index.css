@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+}
+:root {
+  --primary-color: "red";
+}
+input,
+button {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+form {
+  display: block;
+  position: relative;
+}
+form:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, orange, #ad5809);
+  border-radius: 15px;
+}
+form .form-inner {
+  position: inherit;
+  display: block;
+  background-color: rgb(252, 252, 252);
+  padding: 30px 100px;
+  z-index: 2;
+
+  border-radius: 15px;
+}
+form .form-inner h2 {
+  color: rgb(236, 104, 16);
+  font-size: 50px;
+  left: -5px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+form .form-inner .form-group {
+  display: block;
+  width: 300px;
+  margin-bottom: 20px;
+}
+.form-inner .form-group label {
+  color: rgb(5, 5, 5);
+  font-size: 20px;
+  margin-bottom: 1px;
+  transition: 1.3s;
+}
+.form-inner .form-group:focus-within label {
+  color: orange;
+}
+
+form .form-inner .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  transition: 0.4s;
+}
+form .form-inner .form-group:focus {
+  box-shadow: 0px 0px 3px rgba(231, 12, 12, 0.2);
+}
+form .form-inner input[type="submit"] {
+  display: inline-block;
+  padding: 9px 100px;
+  border-radius: 15px;
+  background-image: linear-gradient(
+    to right,
+    #cf5909 20%,
+    #ce8a0b 65%,
+    #dd6f07
+  );
+  background-size: 300%;
+  background-position: 0%;
+  transition: 1s;
+  color: rgb(0, 0, 0);
+}
+form .form-inner input[type="submit"]:hover {
+  background-position: 100% 0%;
+}
