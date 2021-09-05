@@ -66,7 +66,7 @@ export default function LoginPage({ user, setUser }) {
           <TextField
             name="email"
             variant="outlined"
-            size="small"
+            size="small" 
             fullWidth
             onChange={(e) => {
               setForm((prevState) => ({
@@ -92,14 +92,13 @@ export default function LoginPage({ user, setUser }) {
           ></TextField>
         </div>
         <Divider variant="middle" />
-        <Button onClick={handleSubmit} variant="contained">
+        <Button onClick={handleSubmit } variant="contained" >
           <Typography
             style={{
               fontWeight: 600,
             }}
-            variant="body1"
-          >
-            Submit
+            variant="body1">    
+               Submit
           </Typography>
         </Button>
       </Paper>

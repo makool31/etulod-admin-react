@@ -1,12 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import LoginForm from "./components/LoginForm";
-import Dashboard from "./components/Dashboard";
+//import LoginForm from "./components/LoginForm";
+import ManageTD from "./pages/ManageTD";
+import DashboardPanel from "./pages/DashboardPanel";
 import LoginPage from "./pages/Login";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import { useState } from "react";
-import { useEffect } from "react";
+//import { useEffect } from "react";
 
 const theme = createTheme({
   palette: {
@@ -33,23 +34,18 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            {/* <Route path="/" exact component={LoginForm} />
-          <Route
-            path="/dashboard"
-            exact
-            component={() => <Dashboard authorized={false} />}
-          /> */}
-
-            <Route path="/login">
-              <LoginPage user={user} setUser={setUser} />{" "}
-            </Route>
-            <Route path="/">
-              <Dashboard user={user} />
-            </Route>
-          </Switch>
-        </Router>
+        <DashboardPanel>
+          <Router>
+            <Switch>
+              {/* <Route path="/Login">
+                <LoginPage user={user} setUser={setUser} />
+              </Route> */}
+              <Route path="/">
+                <ManageTD />
+              </Route>
+            </Switch>
+          </Router>
+        </DashboardPanel>
       </ThemeProvider>
     </div>
   );
