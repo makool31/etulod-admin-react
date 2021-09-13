@@ -16,14 +16,16 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
-import AccountBox from "@material-ui/icons/AccountBox";
 import RateReview from "@material-ui/icons/RateReview";
 import DriveEta from "@material-ui/icons/DriveEta";
 import ExitToApp from "@material-ui/icons/ExitToApp";
+import TwoWheelerIcon from "@material-ui/icons/TwoWheeler";
 import { useHistory } from "react-router-dom";
+
 //import Button from "@material-ui/core/Button";
 //import ManageTD from "./ManageTD";
 //import {useHistory} from "react";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -212,33 +214,32 @@ export default function NavBar({ children }) {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography>Hello world</Typography>
+        {/* <Typography>Hello world</Typography> */}
         {/* <Typography></Typography> */}
-
         {children}
       </main>
     </div>
   );
 }
 
-const object = {
-  key: "value",
-  title: "anything",
-  umber: 3,
-  items: ["one", "two", "three"],
-  itemsNumber: [1, 2, 3],
-  arrayOfObjects: [
-    {
-      key: "value",
-    },
-    {
-      key: "value",
-      onClick: () => {
-        console.log("i have been clicked");
-      },
-    },
-  ],
-};
+// const object = {
+//   key: "value",
+//   title: "Dashboard",
+//   number: 3,
+//   items: ["two", "two", "three"],
+//   itemsNumber: [1, 2, 3],
+//   arrayOfObjects: [
+//     {
+//       key: "value",
+//     },
+//     {
+//       key: "value",
+//       onClick: () => {
+//         console.log("i have been clicked");
+//       },
+//     },
+//   ],
+// };
 
 const listMenuItems = [
   {
@@ -248,17 +249,28 @@ const listMenuItems = [
   },
   {
     title: "Manage Tricycle Driver",
-    url: "/manage-tricy",
-    icon: <HomeIcon />,
+    url: "/Manage-TD",
+    icon: <TwoWheelerIcon />,
+  },
+  {
+    title: "Manage User",
+    url: "/Manage-User",
+    icon: <RateReview />,
   },
   {
     title: "Fare Rate",
     url: "/fares",
-    icon: <HomeIcon />,
+    icon: <RateReview />,
   },
+
   {
     title: "Transportation Logs",
     url: "/transportation-logs",
-    icon: <HomeIcon />,
+    icon: <DriveEta />,
+  },
+  {
+    title: "Logout",
+    url: "/Logout",
+    icon: <ExitToApp />,
   },
 ];

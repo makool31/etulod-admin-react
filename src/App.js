@@ -5,9 +5,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ManageTD from "./pages/ManageTD";
 import DashboardPanel from "./pages/DashboardPanel";
 import LoginPage from "./pages/Login";
+import ManageUser from "./pages/ManageUser";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import { useState } from "react";
+
 //import { useEffect } from "react";
+//import { useHistory } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -31,6 +34,10 @@ function App() {
   if (!user) {
     return <LoginPage user={user} setUser={setUser} />;
   }
+  // const ExampleComponent = () => {
+  //   const history = useHistory();
+  //   const handleClick = () => history.push("/some-route");
+  // };
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
@@ -40,9 +47,10 @@ function App() {
               {/* <Route path="/Login">
                 <LoginPage user={user} setUser={setUser} />
               </Route> */}
-              <Route path="/">
-                <ManageTD />
-              </Route>
+              <Router path="/ManageTD" component={ManageTD}></Router>
+              <ManageTD />
+              {/* <Router path="/ManageUser" component={ManageUser}></Router>
+              <ManageUser /> */}
             </Switch>
           </Router>
         </DashboardPanel>
