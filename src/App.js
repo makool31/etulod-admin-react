@@ -2,10 +2,14 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //import LoginForm from "./components/LoginForm";
-import ManageTD from "./pages/ManageTD";
+
 import DashboardPanel from "./pages/DashboardPanel";
 import LoginPage from "./pages/Login";
+import ManageTD from "./pages/ManageTD";
 import ManageUser from "./pages/ManageUser";
+import FareRate from "./pages/FareRate";
+import TransportationLogs from "./pages/TransportationLogs";
+import ManageCustomer from "./pages/ManageCustomer";
 import { ThemeProvider, createTheme } from "@material-ui/core";
 import { useState } from "react";
 
@@ -51,6 +55,12 @@ function App() {
               <ManageTD />
               {/* <Router path="/ManageUser" component={ManageUser}></Router>
               <ManageUser /> */}
+              {/* <Router path="/FareRate" component={FareRate}></Router>
+              <FareRate /> */}
+              {/* <Router path="/FareRate" component={TransportationLogs}></Router>
+              <TransportationLogs /> */}
+              {/* <Router path="/ManageUser" component={ManageCustomer}></Router>
+              <ManageCustomer /> */}
             </Switch>
           </Router>
         </DashboardPanel>

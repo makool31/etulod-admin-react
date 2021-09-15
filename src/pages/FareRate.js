@@ -10,19 +10,15 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SortIcon from "@material-ui/icons/Sort";
-// import SaveIcon from "@material-ui/icons/Save";
+import SaveIcon from "@material-ui/icons/Save";
 import CancelSharpIcon from "@material-ui/icons/CancelSharp";
 import CheckSharpIcon from "@material-ui/icons/CheckSharp";
 import ViewColumnTwoToneIcon from "@material-ui/icons/ViewColumnTwoTone";
-function ManageTD() {
+function ManageUser() {
   const [selectedRows] = useState([]);
   const [tableData, setTableData] = useState([
     {
-      name: "Mohan",
-      phone: 906154290,
-      age: 35,
-      gender: "M",
-      // city: "Delhi",
+      name: "Ma-Kel",
       ID: 456125,
     },
   ]);
@@ -32,48 +28,48 @@ function ManageTD() {
   };
   const columns = [
     {
-      title: "Driver's Name",
+      title: "Distance",
       field: "name",
       sorting: false,
       filtering: false,
-      cellStyle: { background: "#F28919" },
+      cellStyle: { background: "#ffc58f", border: "0.5px solid black" },
       headerStyle: { color: "#fff" },
     },
-    {
-      title: "Phone Number",
-      field: "phone",
-      align: "center",
-      grouping: false,
-    },
-    {
-      title: "Age",
-      field: "age",
-      emptyValue: () => <em>null</em>,
-      render: (rowData) => (
-        <div
-          style={{
-            background: rowData.age >= 18 ? "#008000aa" : "#f90000aa",
-            borderRadius: "4px",
-            paddingLeft: 5,
-          }}
-        >
-          {rowData.age >= 18 ? "18+" : "18-"}
-        </div>
-      ),
-      searchable: false,
-      export: false,
-    },
-    {
-      title: "Gender",
-      field: "gender",
-      lookup: { M: "Male", F: "Female" },
-      searchable: false,
-    },
+    //   {
+    //     title: "Phone Number",
+    //     field: "phone",
+    //     align: "center",
+    //     grouping: false,
+    //   },
+    //   {
+    //     title: "Age",
+    //     field: "age",
+    //     emptyValue: () => <em>null</em>,
+    //     render: (rowData) => (
+    //       <div
+    //         style={{
+    //           background: rowData.age >= 18 ? "#008000aa" : "#f90000aa",
+    //           borderRadius: "4px",
+    //           paddingLeft: 5,
+    //         }}
+    //       >
+    //         {rowData.age >= 18 ? "18+" : "18-"}
+    //       </div>
+    //     ),
+    //     searchable: false,
+    //     export: false,
+    //   },
+    // {
+    //   title: "Gender",
+    //   field: "gender",
+    //   lookup: { M: "Male", F: "Female" },
+    //   searchable: false,
+    // },
 
     {
-      title: "Tricycle Driver's No.",
-      field: "ID",
-      cellStyle: { background: "#009688" },
+      title: "Fare",
+      field: "Number",
+      cellStyle: { background: "#525fbf", border: "0.5px solid black" },
       headerStyle: { color: "#fff" },
     },
   ];
@@ -114,7 +110,6 @@ function ManageTD() {
           searchFieldAlignment: "right",
           searchAutoFocus: true,
           searchFieldVariant: "standard",
-          filtering: true,
           paging: true,
           pageSizeOptions: [2, 5, 10, 20, 25, 50],
           pageSize: 5,
@@ -138,7 +133,11 @@ function ManageTD() {
           columnsButton: true,
           rowStyle: (data, index) =>
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
-          headerStyle: { background: "#e36510", color: "#fff" },
+          headerStyle: {
+            background: "#e07f4a",
+            color: "#fff",
+            border: "0.5px solid black",
+          },
         }}
         actions={[
           {
@@ -147,7 +146,7 @@ function ManageTD() {
             onClick: () => handleBulkDelete(),
           },
         ]}
-        title="Manage Driver"
+        title="Fare Rate"
         icons={{
           Add: () => <AddCircleIcon />,
           Search: () => <SearchIcon />,
@@ -168,4 +167,4 @@ function ManageTD() {
     </div>
   );
 }
-export default ManageTD;
+export default ManageUser;

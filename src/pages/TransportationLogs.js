@@ -10,19 +10,15 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import SortIcon from "@material-ui/icons/Sort";
-// import SaveIcon from "@material-ui/icons/Save";
+import SaveIcon from "@material-ui/icons/Save";
 import CancelSharpIcon from "@material-ui/icons/CancelSharp";
 import CheckSharpIcon from "@material-ui/icons/CheckSharp";
 import ViewColumnTwoToneIcon from "@material-ui/icons/ViewColumnTwoTone";
-function ManageTD() {
+function TransportationLogs() {
   const [selectedRows] = useState([]);
   const [tableData, setTableData] = useState([
     {
-      name: "Mohan",
-      phone: 906154290,
-      age: 35,
-      gender: "M",
-      // city: "Delhi",
+      name: "Makol",
       ID: 456125,
     },
   ]);
@@ -32,53 +28,37 @@ function ManageTD() {
   };
   const columns = [
     {
-      title: "Driver's Name",
-      field: "name",
+      title: "Passenger",
+      field: "PassengerName",
       sorting: false,
       filtering: false,
-      cellStyle: { background: "#F28919" },
+      cellStyle: { background: "#F28919", border: "0.5px solid black" },
       headerStyle: { color: "#fff" },
     },
     {
-      title: "Phone Number",
-      field: "phone",
+      title: "Driver",
+      field: "DriverName",
       align: "center",
       grouping: false,
+      cellStyle: { background: "#009688", border: "0.5px solid black" },
     },
     {
-      title: "Age",
-      field: "age",
-      emptyValue: () => <em>null</em>,
-      render: (rowData) => (
-        <div
-          style={{
-            background: rowData.age >= 18 ? "#008000aa" : "#f90000aa",
-            borderRadius: "4px",
-            paddingLeft: 5,
-          }}
-        >
-          {rowData.age >= 18 ? "18+" : "18-"}
-        </div>
-      ),
+      title: "Destination",
+      field: "Destination",
       searchable: false,
       export: false,
-    },
-    {
-      title: "Gender",
-      field: "gender",
-      lookup: { M: "Male", F: "Female" },
-      searchable: false,
+      cellStyle: { background: "#009688", border: "0.5px solid black" },
     },
 
     {
-      title: "Tricycle Driver's No.",
-      field: "ID",
-      cellStyle: { background: "#009688" },
+      title: "Rate",
+      field: "currency",
+      cellStyle: { background: "#009688", border: "0.5px solid black" },
       headerStyle: { color: "#fff" },
     },
   ];
   return (
-    <div className="ManageTD">
+    <div className="TransportationLogs">
       <h1 align="center">E-Tulod</h1>
 
       <MaterialTable
@@ -114,7 +94,7 @@ function ManageTD() {
           searchFieldAlignment: "right",
           searchAutoFocus: true,
           searchFieldVariant: "standard",
-          filtering: true,
+          filtering: false,
           paging: true,
           pageSizeOptions: [2, 5, 10, 20, 25, 50],
           pageSize: 5,
@@ -138,7 +118,11 @@ function ManageTD() {
           columnsButton: true,
           rowStyle: (data, index) =>
             index % 2 === 0 ? { background: "#f5f5f5" } : null,
-          headerStyle: { background: "#e36510", color: "#fff" },
+          headerStyle: {
+            background: "#e36510",
+            color: "#fff",
+            border: "0.5px solid black",
+          },
         }}
         actions={[
           {
@@ -147,7 +131,7 @@ function ManageTD() {
             onClick: () => handleBulkDelete(),
           },
         ]}
-        title="Manage Driver"
+        title="Transportation Logs"
         icons={{
           Add: () => <AddCircleIcon />,
           Search: () => <SearchIcon />,
@@ -168,4 +152,4 @@ function ManageTD() {
     </div>
   );
 }
-export default ManageTD;
+export default TransportationLogs;
